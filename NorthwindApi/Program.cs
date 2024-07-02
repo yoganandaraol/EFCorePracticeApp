@@ -1,4 +1,5 @@
 using NorthwindApi;
+using NorthwindApi.Dtos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,12 @@ builder.Services.AddNorthwindDbContext(builder.Configuration);
 // Add Services
 builder.Services.AddServices();
 
+// Allow CORS
+builder.Services.AddCorsPolicy();
+
+// Add Automapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
 builder.Services.AddControllers();
 
 var app = builder.Build();
@@ -25,6 +32,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowReactApp");
 
 app.MapControllers(); 
 

@@ -1,6 +1,8 @@
-namespace NorthwindApi.Models;
+using NorthwindApi.Entities;
 
-public class Product
+namespace NorthwindApi.Dtos;
+
+public class ProductDto : IMapFrom<Product>
 {
     public int ProductId { get; set; }
 

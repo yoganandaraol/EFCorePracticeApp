@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/4fKnstreSMu5DZgLL7/E5EDH3KfnJSpTQk4mmUmCquqbGIAeq9gyGeD0VyX8tKsOTDrqKycMP8p6IXfHcRJCw==",
+  "dgSpecHash": "LjDsg7G8j+cd177/PCtQfi5pSLauOdGDwxYzM2i8D+v4jb6ajTiN5rX/vHzS7Vt0hPw58DlVoSZgVvlu/QlntQ==",
   "success": true,
   "projectFilePath": "/Users/yoganandaraolocherla/Documents/Practice/C#/EFCore/EFCorePracticeApp/NorthwindApi/NorthwindApi.csproj",
   "expectedPackageFiles": [
+    "/Users/yoganandaraolocherla/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/yoganandaraolocherla/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/yoganandaraolocherla/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
     "/Users/yoganandaraolocherla/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

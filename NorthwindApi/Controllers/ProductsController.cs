@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using NorthwindApi.Models;
+using NorthwindApi.Dtos;
 using NorthwindApi.Services;
 
 namespace NorthwindApi.Controllers;
@@ -7,7 +7,7 @@ namespace NorthwindApi.Controllers;
 public class ProductsController(IProductsService productsService) : BaseApiController
 {
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Product>>> GetProducts(CancellationToken cancellationToken)
+    public async Task<ActionResult<IEnumerable<ProductDto>>> GetProducts(CancellationToken cancellationToken)
     {
         var products = await productsService.GetProducts(cancellationToken);
         return Ok(products);
@@ -15,7 +15,7 @@ public class ProductsController(IProductsService productsService) : BaseApiContr
 
     [HttpGet]
     [Route("/{productId}")]
-    public async Task<ActionResult<Product>> GetProduct([FromRoute] string productId, CancellationToken cancellationToken)
+    public async Task<ActionResult<ProductDto>> GetProduct([FromRoute] string productId, CancellationToken cancellationToken)
     {
         if (!int.TryParse(productId, out var itemId))
             return BadRequest("Invalid ProductId");

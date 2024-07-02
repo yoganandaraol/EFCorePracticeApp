@@ -1,25 +1,31 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using NorthwindApi.Context;
-using NorthwindApi.Entities;
+using NorthwindApi.Dtos;
 
 namespace NorthwindApi.Services;
 
 public interface IProductsService
 {
-    Task<IEnumerable<Product>> GetProducts(CancellationToken cancellationToken);
+    Task<IEnumerable<ProductDto>> GetProducts(CancellationToken cancellationToken);
 
-    Task<Product?> GetProduct(int productId, CancellationToken cancellationToken);
+    Task<ProductDto?> GetProduct(int productId, CancellationToken cancellationToken);
 }
 
-public class ProductsService(INorthwindDbContext dbContext) : IProductsService
+public class ProductsService(INorthwindDbContext dbContext, IMapper mapper) : IProductsService
 {
-    public async Task<IEnumerable<Product>> GetProducts(CancellationToken cancellationToken) =>
-        await dbContext.Products.AsNoTracking().ToListAsync(cancellationToken);
-
-    public async Task<Product?> GetProduct(int productId, CancellationToken cancellationToken)
+    public async Task<IEnumerable<ProductDto>> GetProducts(CancellationToken cancellationToken)
     {
-        var product = await dbContext.Products.AsNoTracking()
+        var result = await dbContext.Products.AsNoTracking().ToListAsync(cancellationToken);
+        var products = mapper.Map<IEnumerable<ProductDto>>(result);
+        return products;
+    }
+
+    public async Task<ProductDto?> GetProduct(int productId, CancellationToken cancellationToken)
+    {
+        var result = await dbContext.Products.AsNoTracking()
             .FirstOrDefaultAsync(p => p.ProductId == productId, cancellationToken);
+        var product = mapper.Map<ProductDto>(result);
         return product;
     }
 }
