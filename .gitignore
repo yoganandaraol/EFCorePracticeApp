@@ -1,3 +1,11 @@
 
 NorthwindApi/obj/Debug
 *.dll
+NorthwindApi/bin/Debug/net8.0/appsettings.Development.json
+NorthwindApi/bin/Debug/net8.0/appsettings.json
+NorthwindApi/bin/Debug/net8.0/NorthwindApi.pdb
+NorthwindApi/bin/Debug/net8.0/NorthwindApi.runtimeconfig.json
+NorthwindApi/bin/Debug/net8.0/NorthwindApi.deps.json
+NorthwindApi/bin/Debug/net8.0/NorthwindApi
+NorthwindApi/bin/.DS_Store
+NorthwindApi/bin/Debug/.DS_Store
