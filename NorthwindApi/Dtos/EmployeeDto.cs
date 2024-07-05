@@ -13,13 +13,13 @@ public class EmployeeDto : IMapFrom<Employee>
     //public byte[]? Photo { get; set; }
 
     public string? Photo { get; set; } = string.Empty;
+    
     public string? PhotoPath { get; set; }
 
     public string? Title { get; set; }
-
-    /*
+    
     public DateTime? BirthDate { get; set; }
-
+    /*
     public DateTime? HireDate { get; set; }
 
     public string? Address { get; set; }

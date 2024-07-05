@@ -23,8 +23,9 @@ public class EmployeesService(INorthwindDbContext dbContext, IMapper mapper) : I
                 EmployeeId = emp.EmployeeId,
                 FirstName = emp.FirstName,
                 LastName = emp.LastName,
-                Photo = Convert.ToBase64String(emp.Photo ?? Array.Empty<byte>()),
+                Photo = emp.PhotoBase64, //Convert.ToBase64String(emp.Photo ?? Array.Empty<byte>()),
                 PhotoPath = emp.PhotoPath,
+                BirthDate = emp.BirthDate,
                 Title = emp.Title
             })
             .ToListAsync(cancellationToken);

@@ -37,6 +37,8 @@ public class Employee
     public int? ReportsTo { get; set; }
 
     public string? PhotoPath { get; set; }
+    
+    public string? PhotoBase64 { get; set; }
 
     public virtual ICollection<Employee> InverseReportsToNavigation { get; set; } = new List<Employee>();
 
