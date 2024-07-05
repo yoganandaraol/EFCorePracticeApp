@@ -23,7 +23,6 @@
 
     <ItemGroup>
       <Folder Include="Context\Configurations\" />
-      <Folder Include="Entities\Migrations\" />
     </ItemGroup>
 
 </Project>
